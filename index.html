@@ -8,16 +8,19 @@
 </head>
 <body>
 
-<!--
-  ГОЛОВНА СТОРІНКА
-  За проханням — без навігації. Якщо колись захочеш додати посилання
-  на сторінки мов, приклад навігаційного блоку лежить у japanese.html
-  (клас .site-header / .main-nav) — просто скопіюй його сюди.
--->
+<header class="site-header">
+  <a class="brand" href="index.html">Languages</a>
+  <nav class="main-nav" aria-label="Мови">
+    <a href="index.html" aria-current="page">Головна</a>
+    <a href="japanese.html">日本語</a>
+    <a href="german.html">Deutsch</a>
+    <a href="english.html">English</a>
+  </nav>
+</header>
 
 <main class="page" style="max-width:760px;">
 
-  <section class="page-hero" style="border-bottom:none; padding-top:14vh;">
+  <section class="page-hero" style="border-bottom:none; padding-top:8vh;">
     <p class="eyebrow">Особистий конспект · ведеться з 2026</p>
     <h1 class="page-title" style="font-size:clamp(3rem, 9vw, 5rem);">Languages</h1>
     <p class="page-subtitle" style="font-size:1.15rem;">
@@ -36,9 +39,9 @@
     </p>
 
     <div style="display:flex; gap:10px; margin-top:28px; flex-wrap:wrap;">
-      <span class="tag" style="background:var(--accent-dim); color:var(--accent-soft); border-color:var(--accent-line);">日本語</span>
-      <span class="tag" style="background:var(--accent-dim); color:var(--accent-soft); border-color:var(--accent-line);">Deutsch</span>
-      <span class="tag" style="background:var(--accent-dim); color:var(--accent-soft); border-color:var(--accent-line);">English</span>
+      <a href="japanese.html" class="tag" style="text-decoration:none; background:var(--accent-dim); color:var(--accent-soft); border-color:var(--accent-line);">日本語</a>
+      <a href="german.html" class="tag" style="text-decoration:none; background:var(--accent-dim); color:var(--accent-soft); border-color:var(--accent-line);">Deutsch</a>
+      <a href="english.html" class="tag" style="text-decoration:none; background:var(--accent-dim); color:var(--accent-soft); border-color:var(--accent-line);">English</a>
     </div>
   </section>
 
