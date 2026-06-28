@@ -1,0 +1,537 @@
+/* ==========================================================================
+   Languages — спільні стилі
+   Палітра: глибока ніч + спокійний синій. Все приглушене, без яскравих акцентів.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  /* base */
+  --bg-0:#070b15;
+  --bg-1:#0b1120;
+  --surface:#121a32;
+  --surface-2:#182245;
+  --border:rgba(140,162,230,.14);
+  --border-strong:rgba(140,162,230,.30);
+
+  /* text */
+  --text-0:#e8ecf7;
+  --text-1:#a6b0d1;
+  --text-2:#677099;
+
+  /* accent — синій, спокійний */
+  --accent:#5b8cff;
+  --accent-soft:#8fb0ff;
+  --accent-dim:rgba(91,140,255,.12);
+  --accent-line:rgba(91,140,255,.35);
+
+  /* другорядний холодний акцент — лише для дрібних міток */
+  --teal:#52b3ac;
+  --teal-dim:rgba(82,179,172,.14);
+
+  --radius:14px;
+  --radius-sm:8px;
+
+  --font-display:'Fraunces', 'Iowan Old Style', serif;
+  --font-body:'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  background:var(--bg-0);
+  color:var(--text-0);
+  font-family:var(--font-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+  min-height:100vh;
+}
+
+/* ---- Атмосфера: лінії конспекту + м'яке "місячне" світло ---- */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(140,162,230,.05) 0px,
+      rgba(140,162,230,.05) 1px,
+      transparent 1px,
+      transparent 38px
+    );
+  background-position:0 90px;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  top:-20%;
+  left:50%;
+  width:1100px;
+  height:700px;
+  transform:translateX(-50%);
+  background:radial-gradient(closest-side, rgba(91,140,255,.10), transparent 70%);
+  z-index:0;
+  pointer-events:none;
+}
+
+a{ color:inherit; }
+img{ max-width:100%; }
+
+::selection{ background:var(--accent-dim); color:var(--text-0); }
+
+:focus-visible{
+  outline:2px solid var(--accent-soft);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+/* ==========================================================================
+   Header / Навігація
+   (використовується лише на сторінках мов — на головній сторінці її немає)
+   ========================================================================== */
+
+.site-header{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+  max-width:920px;
+  margin:0 auto;
+  padding:28px 28px 24px;
+}
+
+.brand{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1.25rem;
+  text-decoration:none;
+  letter-spacing:.01em;
+  color:var(--text-0);
+}
+
+.main-nav{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.main-nav a{
+  font-family:var(--font-mono);
+  font-size:.85rem;
+  text-decoration:none;
+  color:var(--text-1);
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid transparent;
+  transition:color .15s ease, border-color .15s ease, background .15s ease;
+}
+
+.main-nav a:hover{
+  color:var(--text-0);
+  border-color:var(--border);
+  background:var(--surface);
+}
+
+.main-nav a[aria-current="page"]{
+  color:var(--accent-soft);
+  border-color:var(--accent-line);
+  background:var(--accent-dim);
+}
+
+/* ==========================================================================
+   Загальна структура сторінки
+   ========================================================================== */
+
+.page{
+  position:relative;
+  z-index:1;
+  max-width:920px;
+  margin:0 auto;
+  padding:0 28px 100px;
+}
+
+.page-hero{
+  padding:48px 0 40px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:48px;
+}
+
+.eyebrow{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  letter-spacing:.06em;
+  color:var(--accent-soft);
+  text-transform:uppercase;
+  margin:0 0 14px;
+}
+
+.page-title{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(2.4rem, 6vw, 3.4rem);
+  line-height:1.1;
+  margin:0 0 16px;
+  color:var(--text-0);
+}
+
+.page-subtitle{
+  font-size:1.05rem;
+  color:var(--text-1);
+  max-width:640px;
+  margin:0;
+}
+
+/* ==========================================================================
+   Секції-конспекту (для сторінок мов)
+   ========================================================================== */
+
+.section{
+  margin-bottom:56px;
+}
+
+.section-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+
+.section-title{
+  font-family:var(--font-display);
+  font-size:1.5rem;
+  font-weight:600;
+  margin:0;
+  color:var(--text-0);
+}
+
+.section-note{
+  font-family:var(--font-mono);
+  font-size:.8rem;
+  color:var(--text-2);
+}
+
+.section-hint{
+  font-size:.88rem;
+  color:var(--text-2);
+  margin:-8px 0 18px;
+}
+
+/* ---- Базова картка ---- */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px 22px;
+}
+
+/* ---- Чіп / тег рівня ---- */
+.tag{
+  display:inline-flex;
+  align-items:center;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.03em;
+  padding:3px 9px;
+  border-radius:999px;
+  background:var(--teal-dim);
+  color:var(--teal);
+  border:1px solid rgba(82,179,172,.3);
+}
+
+/* ==========================================================================
+   Контейнери-конспекту
+   (картки для слів, кандзі, граматики, фраз — використовуються
+   на сторінках мов; стилі спільні, щоб German/English виглядали так само)
+   ========================================================================== */
+
+/* ---- Кана / будь-яка таблиця символів ---- */
+.kana-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(64px, 1fr));
+  gap:10px;
+}
+
+.kana-cell{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:12px 6px;
+  text-align:center;
+  transition:border-color .15s ease, background .15s ease;
+}
+
+.kana-cell:hover{
+  border-color:var(--border-strong);
+  background:var(--surface-2);
+}
+
+.kana-char{
+  display:block;
+  font-family:var(--font-display);
+  font-size:1.5rem;
+  color:var(--text-0);
+}
+
+.kana-romaji{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  color:var(--text-2);
+  margin-top:4px;
+}
+
+/* ---- Картка слова ---- */
+.vocab-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:14px;
+}
+
+.vocab-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px 20px;
+}
+
+.vocab-word{
+  font-family:var(--font-display);
+  font-size:1.7rem;
+  color:var(--text-0);
+  margin:0 0 2px;
+}
+
+.vocab-word ruby{ ruby-align:center; }
+.vocab-word rt{
+  font-family:var(--font-mono);
+  font-size:.6rem;
+  color:var(--accent-soft);
+}
+
+.vocab-romaji{
+  font-family:var(--font-mono);
+  font-size:.82rem;
+  color:var(--text-2);
+  margin:0 0 10px;
+}
+
+.vocab-meaning{
+  font-size:.98rem;
+  color:var(--text-0);
+  margin:0 0 12px;
+}
+
+.vocab-example{
+  border-top:1px solid var(--border);
+  padding-top:10px;
+  font-size:.92rem;
+  color:var(--text-1);
+}
+
+.vocab-example .jp{ color:var(--text-0); display:block; margin-bottom:3px; }
+.vocab-example .tr{ color:var(--text-2); display:block; font-size:.86rem; }
+
+/* ---- Картка кандзі ---- */
+.kanji-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:14px;
+}
+
+.kanji-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  display:flex;
+  gap:16px;
+}
+
+.kanji-char{
+  font-family:var(--font-display);
+  font-size:2.6rem;
+  line-height:1;
+  color:var(--text-0);
+  flex-shrink:0;
+}
+
+.kanji-body{ flex:1; }
+
+.kanji-meaning{
+  margin:2px 0 8px;
+  font-size:.98rem;
+  color:var(--text-0);
+}
+
+.kanji-readings{
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  color:var(--text-1);
+  margin:0 0 8px;
+  line-height:1.7;
+}
+
+.kanji-readings b{ color:var(--accent-soft); font-weight:500; }
+
+.kanji-notes{
+  font-size:.85rem;
+  color:var(--text-2);
+  margin:0;
+  border-top:1px solid var(--border);
+  padding-top:8px;
+}
+
+/* ---- Блок граматики ---- */
+.grammar-block{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px 24px;
+}
+
+.grammar-pattern{
+  font-family:var(--font-mono);
+  font-size:1rem;
+  color:var(--accent-soft);
+  background:var(--accent-dim);
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:var(--radius-sm);
+  margin:0 0 14px;
+}
+
+.grammar-explanation{
+  color:var(--text-1);
+  font-size:.96rem;
+  margin:0 0 16px;
+}
+
+.grammar-examples{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.grammar-examples li{
+  border-top:1px solid var(--border);
+  padding-top:10px;
+  font-size:.92rem;
+}
+
+.grammar-examples .jp{ color:var(--text-0); display:block; margin-bottom:3px; }
+.grammar-examples .tr{ color:var(--text-2); display:block; font-size:.86rem; }
+
+/* ---- Картка фрази ---- */
+.phrase-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:14px;
+}
+
+.phrase-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px 20px;
+}
+
+.phrase-jp{
+  font-family:var(--font-display);
+  font-size:1.25rem;
+  margin:0 0 2px;
+  color:var(--text-0);
+}
+
+.phrase-reading{
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  color:var(--text-2);
+  margin:0 0 8px;
+}
+
+.phrase-meaning{
+  font-size:.92rem;
+  color:var(--text-1);
+  margin:0;
+}
+
+/* ---- Вільні нотатки (сторінка нотатника) ---- */
+.notes-page{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px 24px;
+  background-image:repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 33px,
+    var(--border) 33px,
+    var(--border) 34px
+  );
+  background-position:0 18px;
+}
+
+.notes-page p{
+  margin:0 0 16px;
+  color:var(--text-1);
+  font-size:.95rem;
+}
+.notes-page p:last-child{ margin-bottom:0; }
+
+/* ==========================================================================
+   "Скоро буде" сторінки
+   ========================================================================== */
+
+.soon{
+  min-height:50vh;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  padding:60px 0;
+}
+
+.soon-native{
+  font-family:var(--font-display);
+  font-size:clamp(2.6rem, 7vw, 4rem);
+  font-weight:600;
+  margin:0 0 14px;
+}
+
+.soon-note{
+  color:var(--text-1);
+  max-width:480px;
+  font-size:1.02rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width:640px){
+  .site-header{ padding:22px 18px 18px; }
+  .page{ padding:0 18px 80px; }
+  .page-hero{ padding:34px 0 28px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ transition:none !important; animation:none !important; }
+}
