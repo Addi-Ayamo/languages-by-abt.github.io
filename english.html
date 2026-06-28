@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,8 @@
 
 <header class="site-header">
   <a class="brand" href="index.html">Languages</a>
-  <nav class="main-nav" aria-label="Мови">
-    <a href="index.html">Головна</a>
+  <nav class="main-nav" aria-label="Языки">
+    <a href="index.html">Главная</a>
     <a href="japanese.html">日本語</a>
     <a href="german.html">Deutsch</a>
     <a href="english.html" aria-current="page">English</a>
@@ -19,15 +19,155 @@
 </header>
 
 <main class="page">
-  <div class="soon">
-    <p class="eyebrow">Конспект · Англійська мова</p>
-    <h1 class="soon-native">Coming soon</h1>
-    <p class="soon-note">
-      Цей розділ ще порожній — конспект з англійської з'явиться тут трохи
-      пізніше. Структура буде такою ж, як на сторінці японської: словник,
-      граматика, фрази та нотатки.
+
+  <section class="page-hero">
+    <p class="eyebrow">Конспект · Английский язык</p>
+    <h1 class="page-title">English</h1>
+    <p class="page-subtitle">
+      Личные заметки по английскому: словарь, грамматика и фразы. Ниже —
+      примеры контейнеров с образцовым содержимым, такие же, как на
+      странице японского. Копируй нужный блок и заполняй своими словами.
     </p>
+  </section>
+
+  <div class="layout">
+
+    <!-- Левая навигация по разделам страницы (якорные ссылки, без JS) -->
+    <aside class="section-nav">
+      <p class="section-nav-label">Разделы</p>
+      <a href="#vocab">Словарь</a>
+      <a href="#grammar">Грамматика</a>
+      <a href="#phrases">Фразы</a>
+      <a href="#notes">Заметки</a>
+    </aside>
+
+    <div class="layout-content">
+
+      <!-- ==================================================================
+           СЛОВАРЬ
+           Одна .vocab-card = одно слово.
+           ================================================================== -->
+      <section class="section" id="vocab">
+        <div class="section-head">
+          <h2 class="section-title">Словарь</h2>
+          <span class="section-note">vocabulary · пример</span>
+        </div>
+
+        <div class="vocab-grid">
+
+          <div class="vocab-card">
+            <p class="vocab-word">to study</p>
+            <p class="vocab-romaji">[tə ˈstʌdi]</p>
+            <p class="vocab-meaning">учиться · изучать</p>
+            <div class="vocab-example">
+              <span class="src">I study English every day.</span>
+              <span class="tr">Я учу английский каждый день.</span>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <p class="vocab-word">library</p>
+            <p class="vocab-romaji">[ˈlaɪbrəri]</p>
+            <p class="vocab-meaning">библиотека</p>
+            <div class="vocab-example">
+              <span class="src">I study in the library.</span>
+              <span class="tr">Я учусь в библиотеке.</span>
+            </div>
+          </div>
+
+          <!-- ↓ копируй .vocab-card выше и заполняй своими словами -->
+
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           ГРАММАТИКА
+           Один .grammar-block = одна грамматическая конструкция.
+           ================================================================== -->
+      <section class="section" id="grammar">
+        <div class="section-head">
+          <h2 class="section-title">Грамматика</h2>
+          <span class="section-note">grammar · пример</span>
+        </div>
+
+        <div class="grammar-block">
+          <p class="grammar-pattern">Present Continuous: to be + V-ing</p>
+          <p class="grammar-explanation">
+            Используется для действия, которое происходит прямо сейчас,
+            в момент речи, или для временной ситуации.
+          </p>
+          <ul class="grammar-examples">
+            <li>
+              <span class="src">I am reading a book right now.</span>
+              <span class="tr">Я читаю книгу прямо сейчас.</span>
+            </li>
+            <li>
+              <span class="src">She is studying English this year.</span>
+              <span class="tr">Она изучает английский в этом году.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ↓ копируй .grammar-block выше для новой конструкции -->
+
+      </section>
+
+      <!-- ==================================================================
+           ФРАЗЫ
+           Одна .phrase-card = одно выражение или устойчивый оборот.
+           ================================================================== -->
+      <section class="section" id="phrases">
+        <div class="section-head">
+          <h2 class="section-title">Фразы</h2>
+          <span class="section-note">phrases · пример</span>
+        </div>
+
+        <div class="phrase-grid">
+
+          <div class="phrase-card">
+            <p class="phrase-src">Break a leg!</p>
+            <p class="phrase-reading">[breɪk ə leɡ]</p>
+            <p class="phrase-meaning">«Удачи!» — говорят перед выступлением или экзаменом.</p>
+          </div>
+
+          <div class="phrase-card">
+            <p class="phrase-src">It's raining cats and dogs.</p>
+            <p class="phrase-reading">[ɪts ˈreɪnɪŋ kæts ən dɒɡz]</p>
+            <p class="phrase-meaning">«Льёт как из ведра» — об очень сильном дожде.</p>
+          </div>
+
+          <!-- ↓ копируй .phrase-card выше для новых фраз -->
+
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           СВОБОДНЫЕ ЗАМЕТКИ
+           Просто пиши текст внутри .notes-page — фон имитирует
+           линованную бумагу.
+           ================================================================== -->
+      <section class="section" id="notes">
+        <div class="section-head">
+          <h2 class="section-title">Заметки</h2>
+          <span class="section-note">свободная запись</span>
+        </div>
+
+        <div class="notes-page">
+          <p>
+            Здесь можно писать что угодно без жёсткой структуры:
+            наблюдения за языком, сложные моменты, ссылки на материалы,
+            планы на следующее занятие.
+          </p>
+          <p>
+            Например: разница между Present Perfect и Past Simple до сих
+            пор путает — сделать отдельный раздел грамматики с примерами.
+          </p>
+        </div>
+      </section>
+
+    </div>
   </div>
+
 </main>
 
 </body>
