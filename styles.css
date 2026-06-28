@@ -353,11 +353,17 @@ img{ max-width:100%; }
    на страницах языков; стили общие, чтобы все языки выглядели одинаково)
    ========================================================================== */
 
-/* ---- Кана / любая таблица символов ---- */
+/* ---- Кана / любая таблица символов ----
+   Намеренно 5 фиксированных колонок (а не auto-fill): в годзюон-таблице
+   каждая колонка = один гласный (a/i/u/e/o), и при любой ширине экрана
+   ряды должны оставаться выровненными друг под другом. Если бы колонок
+   было то 5, то 8 (как при auto-fill), соседние строки кана-таблицы
+   перестают совпадать по сетке — именно это и выглядит как "каша". */
 .kana-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(64px, 1fr));
-  gap:10px;
+  grid-template-columns:repeat(5, minmax(0, 1fr));
+  gap:8px;
+  max-width:420px;
 }
 
 .kana-cell{
@@ -598,6 +604,9 @@ img{ max-width:100%; }
   .site-header{ padding:22px 18px 18px; }
   .page{ padding:0 18px 80px; }
   .page-hero{ padding:34px 0 28px; }
+  .kana-grid{ gap:6px; max-width:100%; }
+  .kana-cell{ padding:9px 4px; }
+  .kana-char{ font-size:1.25rem; }
 }
 
 @media (prefers-reduced-motion: reduce){
