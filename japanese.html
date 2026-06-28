@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,8 @@
 
 <header class="site-header">
   <a class="brand" href="index.html">Languages</a>
-  <nav class="main-nav" aria-label="Мови">
-    <a href="index.html">Головна</a>
+  <nav class="main-nav" aria-label="Языки">
+    <a href="index.html">Главная</a>
     <a href="japanese.html" aria-current="page">日本語</a>
     <a href="german.html">Deutsch</a>
     <a href="english.html">English</a>
@@ -21,194 +21,214 @@
 <main class="page">
 
   <section class="page-hero">
-    <p class="eyebrow">Конспект · Японська мова</p>
+    <p class="eyebrow">Конспект · Японский язык</p>
     <h1 class="page-title">日本語</h1>
     <p class="page-subtitle">
-      Особисті нотатки з японської: кана, кандзі, словник, граматика та
-      фрази. Нижче — приклади контейнерів із зразковим вмістом. Просто
-      копіюй потрібний блок і заповнюй власними словами.
+      Личные заметки по японскому: кана, кандзи, словарь, грамматика и
+      фразы. Ниже — примеры контейнеров с образцовым содержимым. Просто
+      копируй нужный блок и заполняй своими словами.
     </p>
   </section>
 
-  <!-- ======================================================================
-       КАНА
-       Скопіюй .kana-cell стільки разів, скільки потрібно символів.
-       ====================================================================== -->
-  <section class="section" id="kana">
-    <div class="section-head">
-      <h2 class="section-title">Кана</h2>
-      <span class="section-note">хірагана · приклад</span>
-    </div>
-    <p class="section-hint">
-      Кожна клітинка — окремий символ. Додай рядок для катакани так само,
-      просто продовжуй сітку нижче.
-    </p>
+  <div class="layout">
 
-    <div class="kana-grid">
-      <div class="kana-cell"><span class="kana-char">あ</span><span class="kana-romaji">a</span></div>
-      <div class="kana-cell"><span class="kana-char">い</span><span class="kana-romaji">i</span></div>
-      <div class="kana-cell"><span class="kana-char">う</span><span class="kana-romaji">u</span></div>
-      <div class="kana-cell"><span class="kana-char">え</span><span class="kana-romaji">e</span></div>
-      <div class="kana-cell"><span class="kana-char">お</span><span class="kana-romaji">o</span></div>
-      <!-- ↓ далі просто додавай такі ж .kana-cell -->
-    </div>
-  </section>
+    <!-- Левая навигация по разделам страницы (якорные ссылки, без JS) -->
+    <aside class="section-nav">
+      <p class="section-nav-label">Разделы</p>
+      <a href="#kana">Кана</a>
+      <a href="#vocab">Словарь</a>
+      <a href="#kanji">Кандзи</a>
+      <a href="#grammar">Грамматика</a>
+      <a href="#phrases">Фразы</a>
+      <a href="#notes">Заметки</a>
+    </aside>
 
-  <!-- ======================================================================
-       СЛОВНИК
-       Один .vocab-card = одне слово. Тег <ruby> малює фуригану над кандзі.
-       ====================================================================== -->
-  <section class="section" id="vocab">
-    <div class="section-head">
-      <h2 class="section-title">Словник</h2>
-      <span class="section-note">vocabulary · приклад</span>
-    </div>
+    <div class="layout-content">
 
-    <div class="vocab-grid">
-
-      <div class="vocab-card">
-        <p class="vocab-word"><ruby>食<rt>た</rt></ruby>べる</p>
-        <p class="vocab-romaji">taberu</p>
-        <p class="vocab-meaning">їсти</p>
-        <div class="vocab-example">
-          <span class="jp">朝ご飯を食べました。</span>
-          <span class="tr">Я поїв(ла) на завтрак.</span>
+      <!-- ==================================================================
+           КАНА
+           Скопируй .kana-cell столько раз, сколько нужно символов.
+           ================================================================== -->
+      <section class="section" id="kana">
+        <div class="section-head">
+          <h2 class="section-title">Кана</h2>
+          <span class="section-note">хирагана · пример</span>
         </div>
-      </div>
+        <p class="section-hint">
+          Каждая клетка — отдельный символ. Добавь строку для катаканы так
+          же, просто продолжай сетку ниже.
+        </p>
 
-      <div class="vocab-card">
-        <p class="vocab-word"><ruby>図<rt>と</rt></ruby><ruby>書<rt>しょ</rt></ruby><ruby>館<rt>かん</rt></ruby></p>
-        <p class="vocab-romaji">toshokan</p>
-        <p class="vocab-meaning">бібліотека</p>
-        <div class="vocab-example">
-          <span class="jp">図書館で勉強します。</span>
-          <span class="tr">Я навчаюсь у бібліотеці.</span>
+        <div class="kana-grid">
+          <div class="kana-cell"><span class="kana-char">あ</span><span class="kana-romaji">a</span></div>
+          <div class="kana-cell"><span class="kana-char">い</span><span class="kana-romaji">i</span></div>
+          <div class="kana-cell"><span class="kana-char">う</span><span class="kana-romaji">u</span></div>
+          <div class="kana-cell"><span class="kana-char">え</span><span class="kana-romaji">e</span></div>
+          <div class="kana-cell"><span class="kana-char">お</span><span class="kana-romaji">o</span></div>
+          <!-- ↓ далее просто добавляй такие же .kana-cell -->
         </div>
-      </div>
+      </section>
 
-      <!-- ↓ копіюй .vocab-card вище і заповнюй своїми словами -->
-
-    </div>
-  </section>
-
-  <!-- ======================================================================
-       КАНДЗІ
-       Один .kanji-card = один ієрогліф із читаннями та нотатками.
-       ====================================================================== -->
-  <section class="section" id="kanji">
-    <div class="section-head">
-      <h2 class="section-title">Кандзі</h2>
-      <span class="section-note">kanji · приклад</span>
-    </div>
-
-    <div class="kanji-grid">
-
-      <div class="kanji-card">
-        <div class="kanji-char">日</div>
-        <div class="kanji-body">
-          <p class="kanji-meaning">сонце · день</p>
-          <p class="kanji-readings"><b>он:</b> ニチ, ジツ &nbsp;·&nbsp; <b>кун:</b> ひ, -び, -か</p>
-          <p class="kanji-notes">Мнемоніка: схоже на вікно, через яке світить сонце. 4 риси.</p>
+      <!-- ==================================================================
+           СЛОВАРЬ
+           Одна .vocab-card = одно слово. Тег <ruby> рисует фуригану над кандзи.
+           ================================================================== -->
+      <section class="section" id="vocab">
+        <div class="section-head">
+          <h2 class="section-title">Словарь</h2>
+          <span class="section-note">vocabulary · пример</span>
         </div>
-      </div>
 
-      <div class="kanji-card">
-        <div class="kanji-char">水</div>
-        <div class="kanji-body">
-          <p class="kanji-meaning">вода</p>
-          <p class="kanji-readings"><b>он:</b> スイ &nbsp;·&nbsp; <b>кун:</b> みず</p>
-          <p class="kanji-notes">Нагадує потік води між берегами. 4 риси.</p>
+        <div class="vocab-grid">
+
+          <div class="vocab-card">
+            <p class="vocab-word"><ruby>食<rt>た</rt></ruby>べる</p>
+            <p class="vocab-romaji">taberu</p>
+            <p class="vocab-meaning">есть</p>
+            <div class="vocab-example">
+              <span class="src">朝ご飯を食べました。</span>
+              <span class="tr">Я поел(а) на завтрак.</span>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <p class="vocab-word"><ruby>図<rt>と</rt></ruby><ruby>書<rt>しょ</rt></ruby><ruby>館<rt>かん</rt></ruby></p>
+            <p class="vocab-romaji">toshokan</p>
+            <p class="vocab-meaning">библиотека</p>
+            <div class="vocab-example">
+              <span class="src">図書館で勉強します。</span>
+              <span class="tr">Я учусь в библиотеке.</span>
+            </div>
+          </div>
+
+          <!-- ↓ копируй .vocab-card выше и заполняй своими словами -->
+
         </div>
-      </div>
+      </section>
 
-      <!-- ↓ копіюй .kanji-card вище для нових ієрогліфів -->
+      <!-- ==================================================================
+           КАНДЗИ
+           Одна .kanji-card = один иероглиф с чтениями и заметками.
+           ================================================================== -->
+      <section class="section" id="kanji">
+        <div class="section-head">
+          <h2 class="section-title">Кандзи</h2>
+          <span class="section-note">kanji · пример</span>
+        </div>
+
+        <div class="kanji-grid">
+
+          <div class="kanji-card">
+            <div class="kanji-char">日</div>
+            <div class="kanji-body">
+              <p class="kanji-meaning">солнце · день</p>
+              <p class="kanji-readings"><b>он:</b> ニチ, ジツ &nbsp;·&nbsp; <b>кун:</b> ひ, -び, -か</p>
+              <p class="kanji-notes">Мнемоника: похоже на окно, через которое светит солнце. 4 черты.</p>
+            </div>
+          </div>
+
+          <div class="kanji-card">
+            <div class="kanji-char">水</div>
+            <div class="kanji-body">
+              <p class="kanji-meaning">вода</p>
+              <p class="kanji-readings"><b>он:</b> スイ &nbsp;·&nbsp; <b>кун:</b> みず</p>
+              <p class="kanji-notes">Напоминает поток воды между берегами. 4 черты.</p>
+            </div>
+          </div>
+
+          <!-- ↓ копируй .kanji-card выше для новых иероглифов -->
+
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           ГРАММАТИКА
+           Один .grammar-block = одна грамматическая конструкция.
+           ================================================================== -->
+      <section class="section" id="grammar">
+        <div class="section-head">
+          <h2 class="section-title">Грамматика</h2>
+          <span class="section-note">grammar · пример</span>
+        </div>
+
+        <div class="grammar-block">
+          <p class="grammar-pattern">Глагол (て-форма) + います</p>
+          <p class="grammar-explanation">
+            Выражает действие, которое происходит прямо сейчас, или
+            длящееся состояние. Образуется от те-формы глагола +
+            вспомогательное います.
+          </p>
+          <ul class="grammar-examples">
+            <li>
+              <span class="src">今、本を読んでいます。</span>
+              <span class="tr">Сейчас я читаю книгу.</span>
+            </li>
+            <li>
+              <span class="src">彼は日本語を勉強しています。</span>
+              <span class="tr">Он изучает японский язык.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ↓ копируй .grammar-block выше для новой конструкции -->
+
+      </section>
+
+      <!-- ==================================================================
+           ФРАЗЫ
+           Одна .phrase-card = одно выражение или устойчивый оборот.
+           ================================================================== -->
+      <section class="section" id="phrases">
+        <div class="section-head">
+          <h2 class="section-title">Фразы</h2>
+          <span class="section-note">phrases · пример</span>
+        </div>
+
+        <div class="phrase-grid">
+
+          <div class="phrase-card">
+            <p class="phrase-src">よろしくお願いします</p>
+            <p class="phrase-reading">yoroshiku onegaishimasu</p>
+            <p class="phrase-meaning">«Прошу любить и жаловать» — говорят при знакомстве или просьбе.</p>
+          </div>
+
+          <div class="phrase-card">
+            <p class="phrase-src">お疲れ様でした</p>
+            <p class="phrase-reading">otsukaresama deshita</p>
+            <p class="phrase-meaning">«Спасибо за работу» — говорят коллегам после завершения дел.</p>
+          </div>
+
+          <!-- ↓ копируй .phrase-card выше для новых фраз -->
+
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           СВОБОДНЫЕ ЗАМЕТКИ
+           Просто пиши текст внутри .notes-page — фон имитирует
+           линованную бумагу.
+           ================================================================== -->
+      <section class="section" id="notes">
+        <div class="section-head">
+          <h2 class="section-title">Заметки</h2>
+          <span class="section-note">свободная запись</span>
+        </div>
+
+        <div class="notes-page">
+          <p>
+            Здесь можно писать что угодно без жёсткой структуры: наблюдения
+            за языком, сложные моменты, ссылки на материалы, планы на
+            следующее занятие.
+          </p>
+          <p>
+            Например: разница между は и が до сих пор путает — вернуться к
+            этому отдельным разделом грамматики.
+          </p>
+        </div>
+      </section>
 
     </div>
-  </section>
-
-  <!-- ======================================================================
-       ГРАМАТИКА
-       Один .grammar-block = одна граматична конструкція.
-       ====================================================================== -->
-  <section class="section" id="grammar">
-    <div class="section-head">
-      <h2 class="section-title">Граматика</h2>
-      <span class="section-note">grammar · приклад</span>
-    </div>
-
-    <div class="grammar-block">
-      <p class="grammar-pattern">Дієслово (て-форма) + います</p>
-      <p class="grammar-explanation">
-        Виражає дію, яка відбувається саме зараз, або стан, що триває.
-        Утворюється від て-форми дієслова + допоміжне います.
-      </p>
-      <ul class="grammar-examples">
-        <li>
-          <span class="jp">今、本を読んでいます。</span>
-          <span class="tr">Зараз я читаю книгу.</span>
-        </li>
-        <li>
-          <span class="jp">彼は日本語を勉強しています。</span>
-          <span class="tr">Він вивчає японську мову.</span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- ↓ копіюй .grammar-block вище для нової конструкції -->
-
-  </section>
-
-  <!-- ======================================================================
-       ФРАЗИ
-       Один .phrase-card = один вираз або сталий зворот.
-       ====================================================================== -->
-  <section class="section" id="phrases">
-    <div class="section-head">
-      <h2 class="section-title">Фрази</h2>
-      <span class="section-note">phrases · приклад</span>
-    </div>
-
-    <div class="phrase-grid">
-
-      <div class="phrase-card">
-        <p class="phrase-jp">よろしくお願いします</p>
-        <p class="phrase-reading">yoroshiku onegaishimasu</p>
-        <p class="phrase-meaning">«Прошу любити та шанувати» — кажуть при знайомстві чи проханні.</p>
-      </div>
-
-      <div class="phrase-card">
-        <p class="phrase-jp">お疲れ様でした</p>
-        <p class="phrase-reading">otsukaresama deshita</p>
-        <p class="phrase-meaning">«Дякую за роботу» — кажуть колегам після завершення справ.</p>
-      </div>
-
-      <!-- ↓ копіюй .phrase-card вище для нових фраз -->
-
-    </div>
-  </section>
-
-  <!-- ======================================================================
-       ВІЛЬНІ НОТАТКИ
-       Просто пиши текст всередині .notes-page — фон імітує лінований папір.
-       ====================================================================== -->
-  <section class="section" id="notes">
-    <div class="section-head">
-      <h2 class="section-title">Нотатки</h2>
-      <span class="section-note">вільний запис</span>
-    </div>
-
-    <div class="notes-page">
-      <p>
-        Тут можна писати будь-що без жорсткої структури: спостереження за
-        мовою, складні моменти, посилання на матеріали, плани на наступне
-        заняття.
-      </p>
-      <p>
-        Наприклад: різниця між は і が досі плутає — повернутися до цього
-        окремим розділом граматики.
-      </p>
-    </div>
-  </section>
+  </div>
 
 </main>
 
