@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,8 @@
 
 <header class="site-header">
   <a class="brand" href="index.html">Languages</a>
-  <nav class="main-nav" aria-label="Мови">
-    <a href="index.html">Головна</a>
+  <nav class="main-nav" aria-label="Языки">
+    <a href="index.html">Главная</a>
     <a href="japanese.html">日本語</a>
     <a href="german.html" aria-current="page">Deutsch</a>
     <a href="english.html">English</a>
@@ -19,15 +19,156 @@
 </header>
 
 <main class="page">
-  <div class="soon">
-    <p class="eyebrow">Конспект · Німецька мова</p>
-    <h1 class="soon-native">Bald verfügbar</h1>
-    <p class="soon-note">
-      Розділ ще порожній — конспект з німецької з'явиться тут, щойно
-      дійдуть руки до занять. Структура буде така ж, як на сторінці
-      японської: словник, граматика, фрази та нотатки.
+
+  <section class="page-hero">
+    <p class="eyebrow">Конспект · Немецкий язык</p>
+    <h1 class="page-title">Deutsch</h1>
+    <p class="page-subtitle">
+      Личные заметки по немецкому: словарь, грамматика и фразы. Ниже —
+      примеры контейнеров с образцовым содержимым, такие же, как на
+      странице японского. Копируй нужный блок и заполняй своими словами.
     </p>
+  </section>
+
+  <div class="layout">
+
+    <!-- Левая навигация по разделам страницы (якорные ссылки, без JS) -->
+    <aside class="section-nav">
+      <p class="section-nav-label">Разделы</p>
+      <a href="#vocab">Словарь</a>
+      <a href="#grammar">Грамматика</a>
+      <a href="#phrases">Фразы</a>
+      <a href="#notes">Заметки</a>
+    </aside>
+
+    <div class="layout-content">
+
+      <!-- ==================================================================
+           СЛОВАРЬ
+           Одна .vocab-card = одно слово.
+           ================================================================== -->
+      <section class="section" id="vocab">
+        <div class="section-head">
+          <h2 class="section-title">Словарь</h2>
+          <span class="section-note">vocabulary · пример</span>
+        </div>
+
+        <div class="vocab-grid">
+
+          <div class="vocab-card">
+            <p class="vocab-word">lernen</p>
+            <p class="vocab-romaji">[ˈlɛʁnən]</p>
+            <p class="vocab-meaning">учить · изучать</p>
+            <div class="vocab-example">
+              <span class="src">Ich lerne Deutsch.</span>
+              <span class="tr">Я изучаю немецкий язык.</span>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <p class="vocab-word">die Bibliothek</p>
+            <p class="vocab-romaji">[bibliotˈeːk]</p>
+            <p class="vocab-meaning">библиотека</p>
+            <div class="vocab-example">
+              <span class="src">Ich lerne in der Bibliothek.</span>
+              <span class="tr">Я учусь в библиотеке.</span>
+            </div>
+          </div>
+
+          <!-- ↓ копируй .vocab-card выше и заполняй своими словами -->
+
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           ГРАММАТИКА
+           Один .grammar-block = одна грамматическая конструкция.
+           ================================================================== -->
+      <section class="section" id="grammar">
+        <div class="section-head">
+          <h2 class="section-title">Грамматика</h2>
+          <span class="section-note">grammar · пример</span>
+        </div>
+
+        <div class="grammar-block">
+          <p class="grammar-pattern">Modalverb + Infinitiv (в конце предложения)</p>
+          <p class="grammar-explanation">
+            Модальный глагол (können, müssen, wollen, möchten…) спрягается
+            и стоит вторым, а основной глагол остаётся в инфинитиве и
+            уходит в конец предложения.
+          </p>
+          <ul class="grammar-examples">
+            <li>
+              <span class="src">Ich kann gut Deutsch sprechen.</span>
+              <span class="tr">Я хорошо умею говорить по-немецки.</span>
+            </li>
+            <li>
+              <span class="src">Wir möchten ins Kino gehen.</span>
+              <span class="tr">Мы хотели бы пойти в кино.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ↓ копируй .grammar-block выше для новой конструкции -->
+
+      </section>
+
+      <!-- ==================================================================
+           ФРАЗЫ
+           Одна .phrase-card = одно выражение или устойчивый оборот.
+           ================================================================== -->
+      <section class="section" id="phrases">
+        <div class="section-head">
+          <h2 class="section-title">Фразы</h2>
+          <span class="section-note">phrases · пример</span>
+        </div>
+
+        <div class="phrase-grid">
+
+          <div class="phrase-card">
+            <p class="phrase-src">Wie geht's?</p>
+            <p class="phrase-reading">[viː ɡeːts]</p>
+            <p class="phrase-meaning">«Как дела?» — неформальное приветствие.</p>
+          </div>
+
+          <div class="phrase-card">
+            <p class="phrase-src">Guten Appetit!</p>
+            <p class="phrase-reading">[ˈɡuːtn̩ apeˈtiːt]</p>
+            <p class="phrase-meaning">«Приятного аппетита!» — говорят перед едой.</p>
+          </div>
+
+          <!-- ↓ копируй .phrase-card выше для новых фраз -->
+
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           СВОБОДНЫЕ ЗАМЕТКИ
+           Просто пиши текст внутри .notes-page — фон имитирует
+           линованную бумагу.
+           ================================================================== -->
+      <section class="section" id="notes">
+        <div class="section-head">
+          <h2 class="section-title">Заметки</h2>
+          <span class="section-note">свободная запись</span>
+        </div>
+
+        <div class="notes-page">
+          <p>
+            Здесь можно писать что угодно без жёсткой структуры:
+            наблюдения за языком, сложные моменты, ссылки на материалы,
+            планы на следующее занятие.
+          </p>
+          <p>
+            Например: артикли der/die/das до сих пор путают — нужно
+            завести отдельную таблицу с примерами на каждый род.
+          </p>
+        </div>
+      </section>
+
+    </div>
   </div>
+
 </main>
 
 </body>
