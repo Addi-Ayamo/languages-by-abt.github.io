@@ -1,12 +1,12 @@
 /* ==========================================================================
-   Languages — спільні стилі
-   Палітра: глибока ніч + спокійний синій. Все приглушене, без яскравих акцентів.
+   Languages — общие стили
+   Палитра: глубокая ночь + спокойный синий. Всё приглушено, без ярких акцентов.
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root{
-  /* base */
+  /* основа */
   --bg-0:#070b15;
   --bg-1:#0b1120;
   --surface:#121a32;
@@ -14,18 +14,18 @@
   --border:rgba(140,162,230,.14);
   --border-strong:rgba(140,162,230,.30);
 
-  /* text */
+  /* текст */
   --text-0:#e8ecf7;
   --text-1:#a6b0d1;
   --text-2:#677099;
 
-  /* accent — синій, спокійний */
+  /* акцент — синий, спокойный */
   --accent:#5b8cff;
   --accent-soft:#8fb0ff;
   --accent-dim:rgba(91,140,255,.12);
   --accent-line:rgba(91,140,255,.35);
 
-  /* другорядний холодний акцент — лише для дрібних міток */
+  /* второстепенный холодный акцент — только для мелких меток */
   --teal:#52b3ac;
   --teal-dim:rgba(82,179,172,.14);
 
@@ -51,7 +51,7 @@ body{
   min-height:100vh;
 }
 
-/* ---- Атмосфера: лінії конспекту + м'яке "місячне" світло ---- */
+/* ---- Атмосфера: линии конспекта + мягкий "лунный" свет ---- */
 body::before{
   content:"";
   position:fixed;
@@ -94,8 +94,8 @@ img{ max-width:100%; }
 }
 
 /* ==========================================================================
-   Header / Навігація
-   (використовується лише на сторінках мов — на головній сторінці її немає)
+   Header / Навигация между страницами
+   (используется на всех страницах сайта)
    ========================================================================== */
 
 .site-header{
@@ -150,7 +150,7 @@ img{ max-width:100%; }
 }
 
 /* ==========================================================================
-   Загальна структура сторінки
+   Общая структура страницы
    ========================================================================== */
 
 .page{
@@ -194,11 +194,106 @@ img{ max-width:100%; }
 }
 
 /* ==========================================================================
-   Секції-конспекту (для сторінок мов)
+   Двухколоночный макет: левая навигация по разделам + контент
+   (используется на страницах языков — japanese.html, german.html, english.html)
+   ========================================================================== */
+
+.layout{
+  display:flex;
+  align-items:flex-start;
+  gap:48px;
+}
+
+.section-nav{
+  flex:0 0 176px;
+  position:sticky;
+  top:28px;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.section-nav-label{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--text-2);
+  margin:0 0 10px;
+  padding:0 12px;
+}
+
+.section-nav a{
+  font-family:var(--font-mono);
+  font-size:.84rem;
+  text-decoration:none;
+  color:var(--text-1);
+  padding:9px 12px;
+  border-radius:var(--radius-sm);
+  border-left:2px solid transparent;
+  transition:color .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.section-nav a:hover{
+  color:var(--text-0);
+  background:var(--surface);
+}
+
+/* Подсветка активного пункта при переходе по якорю (без JS, через :has) */
+.layout:has(#kana:target) .section-nav a[href="#kana"],
+.layout:has(#vocab:target) .section-nav a[href="#vocab"],
+.layout:has(#kanji:target) .section-nav a[href="#kanji"],
+.layout:has(#grammar:target) .section-nav a[href="#grammar"],
+.layout:has(#phrases:target) .section-nav a[href="#phrases"],
+.layout:has(#notes:target) .section-nav a[href="#notes"]{
+  color:var(--accent-soft);
+  background:var(--accent-dim);
+  border-left-color:var(--accent);
+}
+
+.layout-content{
+  flex:1;
+  min-width:0;
+}
+
+@media (max-width:860px){
+  .layout{
+    flex-direction:column;
+    gap:24px;
+  }
+  .section-nav{
+    position:static;
+    flex-direction:row;
+    width:100%;
+    overflow-x:auto;
+    gap:6px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--border);
+  }
+  .section-nav-label{ display:none; }
+  .section-nav a{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+}
+
+/* ==========================================================================
+   Разделы-конспекта (для страниц языков)
    ========================================================================== */
 
 .section{
   margin-bottom:56px;
+  scroll-margin-top:24px;
+}
+
+.section:target{
+  animation:section-flash 1.6s ease;
+  border-radius:var(--radius);
+}
+
+@keyframes section-flash{
+  0%{ box-shadow:0 0 0 1px var(--accent-line), 0 0 36px 4px var(--accent-dim); }
+  100%{ box-shadow:0 0 0 0 transparent; }
 }
 
 .section-head{
@@ -230,7 +325,7 @@ img{ max-width:100%; }
   margin:-8px 0 18px;
 }
 
-/* ---- Базова картка ---- */
+/* ---- Базовая карточка ---- */
 .card{
   background:var(--surface);
   border:1px solid var(--border);
@@ -238,7 +333,7 @@ img{ max-width:100%; }
   padding:20px 22px;
 }
 
-/* ---- Чіп / тег рівня ---- */
+/* ---- Чип / тег уровня ---- */
 .tag{
   display:inline-flex;
   align-items:center;
@@ -253,12 +348,12 @@ img{ max-width:100%; }
 }
 
 /* ==========================================================================
-   Контейнери-конспекту
-   (картки для слів, кандзі, граматики, фраз — використовуються
-   на сторінках мов; стилі спільні, щоб German/English виглядали так само)
+   Контейнеры-конспекта
+   (карточки для слов, кандзи, грамматики, фраз — используются
+   на страницах языков; стили общие, чтобы все языки выглядели одинаково)
    ========================================================================== */
 
-/* ---- Кана / будь-яка таблиця символів ---- */
+/* ---- Кана / любая таблица символов ---- */
 .kana-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill, minmax(64px, 1fr));
@@ -294,7 +389,7 @@ img{ max-width:100%; }
   margin-top:4px;
 }
 
-/* ---- Картка слова ---- */
+/* ---- Карточка слова ---- */
 .vocab-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
@@ -342,10 +437,10 @@ img{ max-width:100%; }
   color:var(--text-1);
 }
 
-.vocab-example .jp{ color:var(--text-0); display:block; margin-bottom:3px; }
+.vocab-example .src{ color:var(--text-0); display:block; margin-bottom:3px; }
 .vocab-example .tr{ color:var(--text-2); display:block; font-size:.86rem; }
 
-/* ---- Картка кандзі ---- */
+/* ---- Карточка кандзи ---- */
 .kanji-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -395,7 +490,7 @@ img{ max-width:100%; }
   padding-top:8px;
 }
 
-/* ---- Блок граматики ---- */
+/* ---- Блок грамматики ---- */
 .grammar-block{
   background:var(--surface);
   border:1px solid var(--border);
@@ -435,10 +530,10 @@ img{ max-width:100%; }
   font-size:.92rem;
 }
 
-.grammar-examples .jp{ color:var(--text-0); display:block; margin-bottom:3px; }
+.grammar-examples .src{ color:var(--text-0); display:block; margin-bottom:3px; }
 .grammar-examples .tr{ color:var(--text-2); display:block; font-size:.86rem; }
 
-/* ---- Картка фрази ---- */
+/* ---- Карточка фразы ---- */
 .phrase-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
@@ -452,7 +547,7 @@ img{ max-width:100%; }
   padding:16px 20px;
 }
 
-.phrase-jp{
+.phrase-src{
   font-family:var(--font-display);
   font-size:1.25rem;
   margin:0 0 2px;
@@ -472,7 +567,7 @@ img{ max-width:100%; }
   margin:0;
 }
 
-/* ---- Вільні нотатки (сторінка нотатника) ---- */
+/* ---- Свободные заметки (страница блокнота) ---- */
 .notes-page{
   background:var(--surface);
   border:1px solid var(--border);
@@ -494,32 +589,6 @@ img{ max-width:100%; }
   font-size:.95rem;
 }
 .notes-page p:last-child{ margin-bottom:0; }
-
-/* ==========================================================================
-   "Скоро буде" сторінки
-   ========================================================================== */
-
-.soon{
-  min-height:50vh;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
-  padding:60px 0;
-}
-
-.soon-native{
-  font-family:var(--font-display);
-  font-size:clamp(2.6rem, 7vw, 4rem);
-  font-weight:600;
-  margin:0 0 14px;
-}
-
-.soon-note{
-  color:var(--text-1);
-  max-width:480px;
-  font-size:1.02rem;
-}
 
 /* ==========================================================================
    Responsive
