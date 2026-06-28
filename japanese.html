@@ -47,104 +47,102 @@
 
       <!-- ==================================================================
            КАНА
-           Скопируй .kana-cell столько раз, сколько нужно символов.
+           Вся хирагана — в ОДНОЙ .kana-grid (5 колонок). Не разбивай на
+           несколько отдельных .kana-grid по рядам: тогда строки не будут
+           гарантированно совпадать по колонкам на разных ширинах экрана.
+           Пустые ячейки (там, где звука исторически нет) — просто
+           &nbsp; в обоих span, чтобы сетка не "съезжала".
+           Для катаканы скопируй всю структуру ниже и поменяй символы.
            ================================================================== -->
       <section class="section" id="kana">
         <div class="section-head">
           <h2 class="section-title">Кана</h2>
-          <span class="section-note">хирагана · пример</span>
+          <span class="section-note">хирагана</span>
         </div>
         <p class="section-hint">
-          Каждая клетка — отдельный символ. Добавь строку для катаканы так
-          же, просто продолжай сетку ниже.
+          Каждая клетка — отдельный символ, колонки — гласные a · i · u · e · o.
+          Для катаканы можно добавить такую же таблицу ниже с отдельным
+          заголовком.
         </p>
 
         <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">あ</span><span class="kana-romaji">a</span></div>
-        <div class="kana-cell"><span class="kana-char">い</span><span class="kana-romaji">i</span></div>
-        <div class="kana-cell"><span class="kana-char">う</span><span class="kana-romaji">u</span></div>
-        <div class="kana-cell"><span class="kana-char">え</span><span class="kana-romaji">e</span></div>
-        <div class="kana-cell"><span class="kana-char">お</span><span class="kana-romaji">o</span></div>
-      </div>
-      <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">か</span><span class="kana-romaji">ka</span></div>
-        <div class="kana-cell"><span class="kana-char">き</span><span class="kana-romaji">ki</span></div>
-        <div class="kana-cell"><span class="kana-char">く</span><span class="kana-romaji">ku</span></div>
-        <div class="kana-cell"><span class="kana-char">け</span><span class="kana-romaji">ke</span></div>
-        <div class="kana-cell"><span class="kana-char">こ</span><span class="kana-romaji">ko</span></div>
-      </div>
-      <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">さ</span><span class="ｄkana-romaji">sa</span></div>
-      <div class="kana-cell"><span class="kana-char">し</span><span class="kana-romaji">si</span></div>
-      <div class="kana-cell"><span class="kana-char">す</span><span class="kana-romaji">su</span></div>
-      <div class="kana-cell"><span class="kana-char">せ</span><span class="kana-romaji">se</span></div>
-      <div class="kana-cell"><span class="kana-char">そ</span><span class="kana-romaji">so</span></div>
-      </div>
-      <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">た</span><span class="kana-romaji">ta</span></div>
-        <div class="kana-cell"><span class="kana-char">ち</span><span class="kana-romaji">ti</span></div>
-        <div class="kana-cell"><span class="kana-char">つ</span><span class="kana-romaji">tu</span></div>
-        <div class="kana-cell"><span class="kana-char">て</span><span class="kana-romaji">te</span></div>
-        <div class="kana-cell"><span class="kana-char">と</span><span class="kana-romaji">to</span></div>
-      </div>
-      <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">な</span><span class="kana-romaji">na</span></div>
-        <div class="kana-cell"><span class="kana-char">に</span><span class="kana-romaji">ni</span></div>
-        <div class="kana-cell"><span class="kana-char">ね</span><span class="kana-romaji">nu</span></div>
-        <div class="kana-cell"><span class="kana-char">ね</span><span class="kana-romaji">ne</span></div>
-        <div class="kana-cell"><span class="kana-char">の</span><span class="kana-romaji">no</span></div>
-      </div>
-      
-      <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">は</span><span class="kana-romaji">ha</span></div>
-        <div class="kana-cell"><span class="kana-char">ひ</span><span class="kana-romaji">hi</span></div>
-        <div class="kana-cell"><span class="kana-char">ふ</span><span class="kana-romaji">hu</span></div>
-        <div class="kana-cell"><span class="kana-char">へ</span><span class="kana-romaji">he</span></div>
-        <div class="kana-cell"><span class="kana-char">ほ</span><span class="kana-romaji">ho</span></div>
-      </div>
+          <!-- あ и т.д. -->
+          <div class="kana-cell"><span class="kana-char">あ</span><span class="kana-romaji">a</span></div>
+          <div class="kana-cell"><span class="kana-char">い</span><span class="kana-romaji">i</span></div>
+          <div class="kana-cell"><span class="kana-char">う</span><span class="kana-romaji">u</span></div>
+          <div class="kana-cell"><span class="kana-char">え</span><span class="kana-romaji">e</span></div>
+          <div class="kana-cell"><span class="kana-char">お</span><span class="kana-romaji">o</span></div>
 
-      <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">ま</span><span class="kana-romaji">ma</span></div>
-        <div class="kana-cell"><span class="kana-char">み</span><span class="kana-romaji">mi</span></div>
-        <div class="kana-cell"><span class="kana-char">む</span><span class="kana-romaji">mu</span></div>
-        <div class="kana-cell"><span class="kana-char">め</span><span class="kana-romaji">me</span></div>
-        <div class="kana-cell"><span class="kana-char">も</span><span class="kana-romaji">mo</span></div>
-      </div>
+          <!-- か き く け こ -->
+          <div class="kana-cell"><span class="kana-char">か</span><span class="kana-romaji">ka</span></div>
+          <div class="kana-cell"><span class="kana-char">き</span><span class="kana-romaji">ki</span></div>
+          <div class="kana-cell"><span class="kana-char">く</span><span class="kana-romaji">ku</span></div>
+          <div class="kana-cell"><span class="kana-char">け</span><span class="kana-romaji">ke</span></div>
+          <div class="kana-cell"><span class="kana-char">こ</span><span class="kana-romaji">ko</span></div>
 
-      <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">や</span><span class="kana-romaji">ya</span></div>
-        <div class="kana-cell"><span class="kana-char"></span><span class="kana-romaji"></span></div>
-        <div class="kana-cell"><span class="kana-char">ゆ</span><span class="kana-romaji">yu</span></div>
-        <div class="kana-cell"><span class="kana-char"></span><span class="kana-romaji"></span></div>
-        <div class="kana-cell"><span class="kana-char">よ</span><span class="kana-romaji">yo</span></div>
-      </div>
+          <!-- さ し す せ そ -->
+          <div class="kana-cell"><span class="kana-char">さ</span><span class="kana-romaji">sa</span></div>
+          <div class="kana-cell"><span class="kana-char">し</span><span class="kana-romaji">si</span></div>
+          <div class="kana-cell"><span class="kana-char">す</span><span class="kana-romaji">su</span></div>
+          <div class="kana-cell"><span class="kana-char">せ</span><span class="kana-romaji">se</span></div>
+          <div class="kana-cell"><span class="kana-char">そ</span><span class="kana-romaji">so</span></div>
 
-      <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">ら</span><span class="kana-romaji">ra</span></div>
-        <div class="kana-cell"><span class="kana-char">り</span><span class="kana-romaji">ri</span></div>
-        <div class="kana-cell"><span class="kana-char">る</span><span class="kana-romaji">ru</span></div>
-        <div class="kana-cell"><span class="kana-char">れ</span><span class="kana-romaji">re</span></div>
-        <div class="kana-cell"><span class="kana-char">ろ</span><span class="kana-romaji">ro</span></div>
-      </div>
+          <!-- た ち つ て と -->
+          <div class="kana-cell"><span class="kana-char">た</span><span class="kana-romaji">ta</span></div>
+          <div class="kana-cell"><span class="kana-char">ち</span><span class="kana-romaji">ti</span></div>
+          <div class="kana-cell"><span class="kana-char">つ</span><span class="kana-romaji">tu</span></div>
+          <div class="kana-cell"><span class="kana-char">て</span><span class="kana-romaji">te</span></div>
+          <div class="kana-cell"><span class="kana-char">と</span><span class="kana-romaji">to</span></div>
 
-      <div class="kana-grid">
-        <div class="kana-cell"><span class="kana-char">わ</span><span class="kana-romaji">wa</span></div>
-        <div class="kana-cell"><span class="kana-char"></span><span class="kana-romaji"></span></div>
-        <div class="kana-cell"><span class="kana-char"></span><span class="kana-romaji"></span></div>
-        <div class="kana-cell"><span class="kana-char"></span><span class="kana-romaji"></span></div>
-        <div class="kana-cell"><span class="kana-char">を</span><span class="kana-romaji">wo</span></div>
-        
-      </div>
-      <div class="kana-grid">
-          <div class="kana-cell"><span class="kana-char">ん</span><span class="kana-romaji">nn</span></div>
-          <div class="kana-cell"><span class="kana-char"></span><span class="kana-romaji"></span></div>
-          <div class="kana-cell"><span class="kana-char"></span><span class="kana-romaji"></span></div>
-          <div class="kana-cell"><span class="kana-char"></span><span class="kana-romaji"></span></div>
-          <div class="kana-cell"><span class="kana-char"></span><span class="kana-romaji"></span></div>
-      </div>
+          <!-- な に ぬ ね の -->
+          <div class="kana-cell"><span class="kana-char">な</span><span class="kana-romaji">na</span></div>
+          <div class="kana-cell"><span class="kana-char">に</span><span class="kana-romaji">ni</span></div>
+          <div class="kana-cell"><span class="kana-char">ぬ</span><span class="kana-romaji">nu</span></div>
+          <div class="kana-cell"><span class="kana-char">ね</span><span class="kana-romaji">ne</span></div>
+          <div class="kana-cell"><span class="kana-char">の</span><span class="kana-romaji">no</span></div>
 
-      <!-- ↓ далі просто додавай такі ж .kana-cell -->
-    </div>
+          <!-- は ひ ふ へ ほ -->
+          <div class="kana-cell"><span class="kana-char">は</span><span class="kana-romaji">ha</span></div>
+          <div class="kana-cell"><span class="kana-char">ひ</span><span class="kana-romaji">hi</span></div>
+          <div class="kana-cell"><span class="kana-char">ふ</span><span class="kana-romaji">hu</span></div>
+          <div class="kana-cell"><span class="kana-char">へ</span><span class="kana-romaji">he</span></div>
+          <div class="kana-cell"><span class="kana-char">ほ</span><span class="kana-romaji">ho</span></div>
+
+          <!-- ま み む め も -->
+          <div class="kana-cell"><span class="kana-char">ま</span><span class="kana-romaji">ma</span></div>
+          <div class="kana-cell"><span class="kana-char">み</span><span class="kana-romaji">mi</span></div>
+          <div class="kana-cell"><span class="kana-char">む</span><span class="kana-romaji">mu</span></div>
+          <div class="kana-cell"><span class="kana-char">め</span><span class="kana-romaji">me</span></div>
+          <div class="kana-cell"><span class="kana-char">も</span><span class="kana-romaji">mo</span></div>
+
+          <!-- や (пустая) ゆ (пустая) よ -->
+          <div class="kana-cell"><span class="kana-char">や</span><span class="kana-romaji">ya</span></div>
+          <div class="kana-cell"><span class="kana-char">&nbsp;</span><span class="kana-romaji">&nbsp;</span></div>
+          <div class="kana-cell"><span class="kana-char">ゆ</span><span class="kana-romaji">yu</span></div>
+          <div class="kana-cell"><span class="kana-char">&nbsp;</span><span class="kana-romaji">&nbsp;</span></div>
+          <div class="kana-cell"><span class="kana-char">よ</span><span class="kana-romaji">yo</span></div>
+
+          <!-- ら り る れ ろ -->
+          <div class="kana-cell"><span class="kana-char">ら</span><span class="kana-romaji">ra</span></div>
+          <div class="kana-cell"><span class="kana-char">り</span><span class="kana-romaji">ri</span></div>
+          <div class="kana-cell"><span class="kana-char">る</span><span class="kana-romaji">ru</span></div>
+          <div class="kana-cell"><span class="kana-char">れ</span><span class="kana-romaji">re</span></div>
+          <div class="kana-cell"><span class="kana-char">ろ</span><span class="kana-romaji">ro</span></div>
+
+          <!-- わ (пустая×2) を -->
+          <div class="kana-cell"><span class="kana-char">わ</span><span class="kana-romaji">wa</span></div>
+          <div class="kana-cell"><span class="kana-char">&nbsp;</span><span class="kana-romaji">&nbsp;</span></div>
+          <div class="kana-cell"><span class="kana-char">&nbsp;</span><span class="kana-romaji">&nbsp;</span></div>
+          <div class="kana-cell"><span class="kana-char">&nbsp;</span><span class="kana-romaji">&nbsp;</span></div>
+          <div class="kana-cell"><span class="kana-char">を</span><span class="kana-romaji">wo</span></div>
+
+          <!-- ん -->
+          <div class="kana-cell"><span class="kana-char">ん</span><span class="kana-romaji">n</span></div>
+          <div class="kana-cell"><span class="kana-char">&nbsp;</span><span class="kana-romaji">&nbsp;</span></div>
+          <div class="kana-cell"><span class="kana-char">&nbsp;</span><span class="kana-romaji">&nbsp;</span></div>
+          <div class="kana-cell"><span class="kana-char">&nbsp;</span><span class="kana-romaji">&nbsp;</span></div>
+          <div class="kana-cell"><span class="kana-char">&nbsp;</span><span class="kana-romaji">&nbsp;</span></div>
+        </div>
       </section>
 
       <!-- ==================================================================
